@@ -43,12 +43,14 @@ jQuery(document).ready(function($) {
             menuDrawer.$page.data('state', 'open').animate({
                 left: -(menuDrawer.$width) + 'px'
             }, 300);
+            $('.menu-btn').removeClass("green").addClass("red").text("Close");
             $('#drawer-nav').show();
         },
         hideMenu: function(){
             menuDrawer.$page.data('state', 'closed').animate({
                 left: 0
             }, 500);
+            $('.menu-btn').removeClass("red").addClass("green").text("Menu");
             $('#drawer-nav').fadeOut();
         }
     };

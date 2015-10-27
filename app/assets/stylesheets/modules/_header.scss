@@ -6,7 +6,7 @@ header.global {
     @include prop(top, 0);
     @include prop(left, 0);
     @include prop(right, 0);
-    position: absolute;
+    position: fixed;
     z-index: 99;
     @include prop(padding, 10, 0);
     box-shadow: 0 2px 2px $grayLight;

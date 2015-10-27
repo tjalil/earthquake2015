@@ -19,7 +19,7 @@
     right: 0;
     height: 100%;
     @include prop(width, 300);
-    @include prop(padding, 10, 30);
+    @include prop(padding, 80, 30);
     overflow: hidden;
     
     ul {
