@@ -62,4 +62,54 @@
             <h2 class="beta">Other Resources</h2>
         </div>
     </div>
+
+    <div class="row sub-section">
+        <div class="columns xsmall-12">
+            <h4 class="delta">Need to Know</h4>
+            <% if @other_resources_need_to_know != [] %>
+                <% @other_resources_need_to_know.each do |resource| %>
+                    <div class="single-resource">
+                        <p><span class="title">Resource:</span> <%= resource.title %></p>
+                        <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
+                        <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
+                        <p><span class="title">Description:</span> <%= resource.description %></p>
+                        <%= link_to "Edit Resource", edit_resource_path(resource), class: "button orange" %>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="row sub-section">
+        <div class="columns xsmall-12">
+            <h4 class="delta">Suggested Resources</h4>
+            <% if @other_resources_suggested != [] %>
+                <% @other_resources_suggested.each do |resource| %>
+                    <div class="single-resource">
+                        <p><span class="title">Resource:</span> <%= resource.title %></p>
+                        <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
+                        <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
+                        <p><span class="title">Description:</span> <%= resource.description %></p>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="row sub-section">
+        <div class="columns xsmall-12">
+            <h4 class="delta">Efforts on the Ground</h4>
+            <% if @other_resources_efforts_on_the_ground != [] %>
+                <% @other_resources_efforts_on_the_ground.each do |resource| %>
+                    <div class="single-resource">
+                        <p><span class="title">Resource:</span> <%= resource.title %></p>
+                        <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
+                        <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
+                        <p><span class="title">Description:</span> <%= resource.description %></p>
+                        <%= link_to "Edit Resource", edit_resource_path(resource), class: "button orange" %>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
 </section>
