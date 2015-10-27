@@ -53,6 +53,49 @@ embed {
     max-width: 100%;
 }
 
+.button {
+    @include prop(padding, 10, 30);
+    @include prop(margin, 10, 0);
+    @include fontSize(12);
+    background: transparent;
+    @include pre(transition, all 0.3s ease);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    cursor: pointer;
+
+    &.green {
+        @include border(2, solid, $green);
+        color: $white;
+        background: $green;
+
+        &:hover {
+            background: $white;
+            color: $green;
+        }
+    }
+
+    &.red {
+        @include border(2, solid, $red);
+        color: $red;
+
+        &:hover {
+            background: $red;
+            color: $white;
+        }
+    }
+
+    &.orange {
+        @include border(2, solid, $orange);
+        color: $orange;
+
+        &:hover {
+            background: $orange;
+            color: $white;
+        }
+    }
+}
+
 
 //----------------------------------------------------------------
 //  Helper Classes

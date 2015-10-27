@@ -7,9 +7,12 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
-        <%= render "partials/header" %>
+        <div id="page">
+            <%= render "partials/header" %>
         
-        <%= yield %>
+            <%= yield %>
+        </div>
 
+        <%= render "partials/drawer_nav" %>
     </body>
 </html>

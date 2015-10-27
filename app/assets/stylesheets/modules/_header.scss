@@ -3,37 +3,62 @@
 // ==========================================================================
 header.global {
     @include pre(transition, all 0.3s ease);
-    background: transparent;
-    margin: 20px 0;
+    @include prop(top, 0);
+    @include prop(left, 0);
+    @include prop(right, 0);
+    position: absolute;
+    z-index: 99;
+    @include prop(padding, 10, 0);
+    box-shadow: 0 2px 2px $grayLight;
+    @include pre(transition, all 0.3s ease);
+    background: $white;
 
     .home & {
         background: transparent;
     }
 
-    .headerTransition & {
-        height: 68px;
-        padding: 15px 0;
-        background: #fff;
-        background: rgba(0,0,0,0.7);
-    }
-
     h1 {
         text-transform: uppercase;
+        letter-spacing: 2px;
         display: inline-block;
-        letter-spacing: 4px;
+        text-align: left;
+        @include fontSize(14);
+        @include prop(padding, 10, 0);
 
-        &:before {
-            font-size: 25px;
-            margin-right: 10px;
+        @media only screen and (min-width: 450px) {
+            letter-spacing: 4px;
+            @include fontSize(24);
+            @include prop(padding, 0);
+        }
+
+        a {
+            color: $titleColor;
         }
     }
 
     nav {
-        float: right;
         display: block;
+        text-align: center;
+        float: right; 
 
         .main-menu-container {
             float: left;
+
+            .desktop {
+                display: none;
+
+                @media only screen and (min-width: 825px) {
+                    display: block;
+                }
+            }
+
+            .mobile {
+                display: block;
+
+                @media only screen and (min-width: 825px) {
+                    display: none;
+                }
+            }
         }
 
         li {
@@ -42,15 +67,20 @@ header.global {
         }
 
         a {
-            @include prop(padding, 10, 20, 8, 20);
-            @include fontSize(13);
+            @include prop(padding, 10, 20);
+            @include fontSize(16);
             transition: color 0.3s ease;
             display: inline-block;
-            color: $bodyColor;
+            color: $grayBlue;
 
             &:hover {
                 color: $black;
             }
+        }
+
+        .button {
+            @include fontSize(12);
+            @include prop(margin, 0);
         }
     }
 }

@@ -1,34 +1,36 @@
 class ResourcesController < ApplicationController
-  before_action :set_resource, only: [:show, :edit, :update, :destroy]
+  before_action :find_resource, only: [:show, :edit, :update, :destroy]
 
-  # GET /resources
-  # GET /resources.json
   def index
     @resources = Resource.all
+
+    @donation_resources = @resources.where(main_section: "Donation")
+    @donation_resources_need_to_know = @donation_resources.find_all { |resource| resource[:sub_section] == "Need to Know" }
+    @donation_resources_suggested = @donation_resources.find_all { |resource| resource[:sub_section] == "Suggested Resource" }
+    @donation_resources_efforts_on_the_ground = @donation_resources.find_all { |resource| resource[:sub_section] == "Efforts on the Ground" }
+
+    @other_resources = @resources.where(main_section: "Other Resources")
+    @other_resources_need_to_know = @other_resources.find_all { |resource| resource[:sub_section] == "Need to Know" }
+    @other_resources_suggested = @other_resources.find_all { |resource| resource[:sub_section] == "Suggested Resource" }
+    @other_resources_efforts_on_the_ground = @other_resources.find_all { |resource| resource[:sub_section] == "Efforts on the Ground" }
   end
 
-  # GET /resources/1
-  # GET /resources/1.json
   def show
   end
 
-  # GET /resources/new
   def new
     @resource = Resource.new
   end
 
-  # GET /resources/1/edit
   def edit
   end
 
-  # POST /resources
-  # POST /resources.json
   def create
     @resource = Resource.new(resource_params)
 
     respond_to do |format|
       if @resource.save
-        format.html { redirect_to @resource, notice: 'Resource was successfully created.' }
+        format.html { redirect_to resources_path, notice: 'Resource was successfully created.' }
         format.json { render :show, status: :created, location: @resource }
       else
         format.html { render :new }
@@ -37,12 +39,10 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /resources/1
-  # PATCH/PUT /resources/1.json
   def update
     respond_to do |format|
       if @resource.update(resource_params)
-        format.html { redirect_to @resource, notice: 'Resource was successfully updated.' }
+        format.html { redirect_to resources_path, notice: 'Resource was successfully updated.' }
         format.json { render :show, status: :ok, location: @resource }
       else
         format.html { render :edit }
@@ -51,8 +51,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # DELETE /resources/1
-  # DELETE /resources/1.json
   def destroy
     @resource.destroy
     respond_to do |format|
@@ -62,12 +60,11 @@ class ResourcesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_resource
+
+    def find_resource
       @resource = Resource.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
       params.require(:resource).permit(:title, :website_link, :contact_num, :description, :main_section, :sub_section)
     end

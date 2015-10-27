@@ -1,12 +1,19 @@
 <header id="header-nav" class="global">
     <div class="row">
         <div class="column xsmall-12">
-            <h1 class="icon-merch">Earthquake 2015</h1>
+            <h1 class="alpha"><a href="/">Earthquake 2015</a></h1>
 
             <nav>
                 <ul class="main-menu-container">
-                    <li><a href="#donations">Donations</a></li>
-                    <li><a href="#resources">Resources</a></li>
+                    <div class="desktop">
+                        <li><a href="#donations">Donations</a></li>
+                        <li><a href="#donations">Other Resources</a></li>
+                        <li><%= link_to 'Add New Resource', new_resource_path, class: "button green" %></li>
+                    </div>
+                    
+                    <div class="mobile">
+                        <li><a class="menu-btn button green" href="javascript:void(0)">Menu</a></li>
+                    </div>
                 </ul>
             </nav>
         </div>

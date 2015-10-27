@@ -1,3 +1,72 @@
 .main-section {
-  @include prop(padding, 20, 0);
+    @include prop(padding, 20, 0);
+
+    &#donations {
+        @include prop(padding-top, 90);
+    }
+
+    h2 {
+        color: $white;
+        @include pre(width, 100%);
+        background: $grayLight;
+        line-height: 1.5;
+        @include prop(margin-bottom, 20);
+        text-align: center;
+    }
+
+    .sub-section {
+        @include prop(margin-bottom, 20);
+
+        h4 {
+           text-transform: uppercase;
+           color: $black;
+           letter-spacing: 2px;
+           @include prop(margin-bottom, 10);
+           text-decoration: underline;
+        }
+    }
+
+    .single-resource {
+        @include prop(margin-bottom, 30);
+        @include border(1, solid, $yellow, bottom);
+        position: relative;
+
+        p {
+            display: block;
+            color: $titleColor;
+            @include prop(margin, 5, 0);
+            line-height: 1.5;
+
+            .title {
+                color: $white;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                background: $yellow;
+                @include fontSize(14);
+                @include prop(padding, 5);
+            }
+        }
+
+        .link {
+            display: inline-block;
+            color: $blue;
+            @include trans(color 0.3s ease);
+
+            &:hover {
+                color: darken($blue, 10);
+            }
+        }
+
+        .button {
+            position: relative;
+            @include prop(padding, 5, 10);
+
+            @media only screen and (min-width: 825px) {
+                position: absolute;
+                right: 0;
+                top: 0;
+                @include prop(padding, 5, 10);
+            }
+        }
+    }
 }
