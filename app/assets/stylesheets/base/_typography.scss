@@ -13,10 +13,10 @@ h1, h2, h3, h4, h5, h6,
 
 h1, 
 .alpha {
-  @include fontSize(30);
+  @include fontSize(24);
 
-  @media only screen and (max-width: ($largeScreen) + px ) {
-      @include fontSize(24)
+  @media only screen and (min-width: $mediumScreen + px) {
+    @include fontSize(30);
   }
 }
 

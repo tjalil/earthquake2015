@@ -1,14 +1,22 @@
+.info-modal {
+    
+}
+
 .main-section {
     @include prop(padding, 20, 0);
 
-    &#donations {
+    &#hero {
         @include prop(padding-top, 90);
+    }
+
+    h1 {
+        @include prop(margin-bottom, 20);
     }
 
     h2 {
         color: $white;
         @include pre(width, 100%);
-        background: $grayLight;
+        background: $grayBlue;
         line-height: 1.5;
         @include prop(margin-bottom, 20);
         text-align: center;
