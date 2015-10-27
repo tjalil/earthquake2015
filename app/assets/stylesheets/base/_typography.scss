@@ -1,48 +1,94 @@
 h1, h2, h3, h4, h5, h6,
 .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
-	color: $titleColor;
-	font-weight: normal;
+    color: $titleColor;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+
+    // /* Better Font Rendering =========== */
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
 }
 
 h1, 
 .alpha {
+  @include fontSize(30);
+
+  @media only screen and (max-width: ($largeScreen) + px ) {
+      @include fontSize(24)
+  }
 }
 
 h2, 
 .beta {
+  @include fontSize(35);
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(45);
+}
 }
 
 h3, 
 .gamma {
+  @include fontSize(28);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(30);
+}
 }
 
 h4, 
 .delta {
+  @include fontSize(22);
+  color: $bodyColor;
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(24);
+}
 }
 
 h5, 
 .epsilon {
+  @include fontSize(16);
 }
 
 h6, 
 .zeta {
 }
 
-p {
-}
-
 p,
 li {
-	color: $bodyColor;
+    color: $bodyColor;
+    @include fontSize(16);
 
-	&.punch {
+    &.heading {
+        @include fontSize(20);
+        text-transform: uppercase;
+        position: relative;
+        @include prop(margin-bottom, 20);
 
-	}
+        &:before {
+          position: absolute;
+          content: "";
+          @include pre(width, 100%);
+          @include prop(height, 1);
+          @include pre(bottom, 0);
+          @include pre(left, 0);
+      }
+  }
+
+  &.tiny {
+    @include fontSize(14);
+    line-height: 1.6;
+}
 }
 
 ol,
 ul {
-    
+
     li {
 
     }
