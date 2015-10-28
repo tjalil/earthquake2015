@@ -3,7 +3,7 @@
 //----------------------------------------------------------------
 jQuery(document).ready(function($) {
 
-    var $pageContent = $('#page, header.global');
+    var $pageContent = $('#page');
 
     var menuDrawer = {
         options: {
