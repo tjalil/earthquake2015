@@ -1,15 +1,6 @@
 // ==========================================================================
 // MENU DRAWER
 // ==========================================================================
-#page {
-    position: relative;
-    display: block;
-    background: #fff;
-    z-index: 10;
-    overflow: visible;
-    height: 100%;
-}
-
 #drawer-nav {
     background: $grayBlue;
     position: fixed;
