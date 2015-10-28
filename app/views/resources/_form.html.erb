@@ -28,8 +28,16 @@
 
   <div class="field">
     <%= f.label :description, "A brief description of the service" %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, {id: "editor1", name: "editor1"} %>
+     <script type="text/javascript">
+        window.onload = function()
+        {
+          CKEDITOR.replace( 'editor1' );
+        };
+      </script>
   </div>
+
+  <!-- <textarea id="editor1" name="editor1">&lt;p&gt;Initial value.&lt;/p&gt;</textarea> -->
 
   <div class="field radio-field">
     <%= f.label :main_section, "Which main section does this belong to?" %><br>

@@ -58,6 +58,10 @@
                 @include fontSize(14);
                 @include prop(padding, 5);
             }
+
+            a {
+                @extend .link;
+            }
         }
 
         .button {
