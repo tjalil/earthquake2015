@@ -1,5 +1,10 @@
-.info-modal {
-    
+.how-it-works {
+    display: none;
+    @include prop(padding, 10, 0);
+
+    h5 {
+        @include prop(margin-bottom, 20);
+    }
 }
 
 .main-section {
@@ -52,16 +57,6 @@
                 background: $yellow;
                 @include fontSize(14);
                 @include prop(padding, 5);
-            }
-        }
-
-        .link {
-            display: inline-block;
-            color: $blue;
-            @include trans(color 0.3s ease);
-
-            &:hover {
-                color: darken($blue, 10);
             }
         }
 

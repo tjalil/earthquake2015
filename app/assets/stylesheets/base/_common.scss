@@ -134,6 +134,15 @@ embed {
     }
 }
 
+.link {
+    display: inline-block;
+    color: $blue;
+    @include trans(color 0.3s ease);
+
+    &:hover {
+        color: darken($blue, 10);
+    }
+}
 
 //----------------------------------------------------------------
 //  Helper Classes

@@ -67,7 +67,7 @@ header.global {
         }
 
         a {
-            @include prop(padding, 10, 20);
+            @include prop(padding, 10);
             @include fontSize(16);
             transition: color 0.3s ease;
             display: inline-block;
@@ -79,6 +79,7 @@ header.global {
         }
 
         .button {
+            @include prop(padding, 10, 20);
             @include fontSize(12);
             @include prop(margin, 0);
         }

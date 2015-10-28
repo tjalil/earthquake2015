@@ -57,3 +57,12 @@ jQuery(document).ready(function($) {
 
     menuDrawer.init();
 });
+
+//----------------------------------------------------------------
+//  How it works
+//----------------------------------------------------------------
+jQuery(document).ready(function($) {
+    $('.show-how-it-works').click(function() {
+        $('.how-it-works').slideToggle();
+    });
+});
