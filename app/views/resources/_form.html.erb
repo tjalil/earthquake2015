@@ -40,11 +40,11 @@
   <div class="field radio-field">
     <%= f.label :main_section, "Which main section does this belong to?" %><br>
     <p>
-      <%= f.radio_button(:main_section, "Donation") %>
+      <%= f.radio_button :main_section, "Donation", required: :true %>
       <%= f.label(:main_section, "Donation") %>
     </p>
     <p>
-      <%= f.radio_button(:main_section, "Other Resources") %>
+      <%= f.radio_button :main_section, "Other Resources", required: :true %>
       <%= f.label(:main_section, "News and Resources") %>
     </p>
   </div>
@@ -52,18 +52,18 @@
   <div class="field radio-field">
     <%= f.label :sub_section, "Which sub-section does this belong to?" %><br>
     <p>
-      <%= f.radio_button(:sub_section, "Need to Know") %>
+      <%= f.radio_button :sub_section, "Need to Know", required: :true %>
       <%= f.label(:sub_section, "Need to Know") %>
     </p>
     <% if @resource.sub_section.present? %>
     <% else %>
       <p>
-        <%= f.radio_button(:sub_section, "Suggested Resource") %>
+        <%= f.radio_button :sub_section, "Suggested Resource", required: :true %>
         <%= f.label(:sub_section, "Suggested Resource") %>
       </p>
     <% end %>
     <p>
-      <%= f.radio_button(:sub_section, "Efforts on the Ground") %>
+      <%= f.radio_button :sub_section, "Efforts on the Ground", required: :true %>
       <%= f.label(:sub_section, "Efforts on the Ground") %>
     </p>
   </div>
