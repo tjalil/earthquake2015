@@ -45,7 +45,7 @@ class ResourcesController < ApplicationController
     respond_to do |format|
       if @resource.update(resource_params)
         @resource.update_attribute(:description, params[:editor1])
-        
+
         format.html { redirect_to resources_path, notice: 'Resource was successfully updated.' }
         format.json { render :show, status: :ok, location: @resource }
       else
