@@ -37,6 +37,8 @@
                         <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
                         <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
                         <p><span class="title">Notes:</span> <%= resource.description.html_safe %></p>
+                        <p class="timestamp">Posted on: <%= resource.created_at.to_s(:just_date) %></p>
+                        <p class="timestamp">Last updated on: <%= resource.updated_at.to_s(:just_date) %></p>
                         <%= link_to "Edit Resource", edit_resource_path(resource), class: "button orange" %>
                     </div>
                 <% end %>
@@ -54,6 +56,8 @@
                         <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
                         <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
                         <p><span class="title">Notes:</span> <%= resource.description.html_safe %></p>
+                        <p class="timestamp">Posted on: <%= resource.created_at.to_s(:just_date) %></p>
+                        <p class="timestamp">Last updated on: <%= resource.updated_at.to_s(:just_date) %></p>
                     </div>
                 <% end %>
             <% end %>
@@ -70,6 +74,8 @@
                         <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
                         <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
                         <p><span class="title">Notes:</span> <%= resource.description.html_safe %></p>
+                        <p class="timestamp">Posted on: <%= resource.created_at.to_s(:just_date) %></p>
+                        <p class="timestamp">Last updated on: <%= resource.updated_at.to_s(:just_date) %></p>
                         <%= link_to "Edit Resource", edit_resource_path(resource), class: "button orange" %>
                     </div>
                 <% end %>
@@ -95,6 +101,8 @@
                         <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
                         <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
                         <p><span class="title">Notes:</span> <%= resource.description.html_safe %></p>
+                        <p class="timestamp">Posted on: <%= resource.created_at.to_s(:just_date) %></p>
+                        <p class="timestamp">Last updated on: <%= resource.updated_at.to_s(:just_date) %></p>
                         <%= link_to "Edit Resource", edit_resource_path(resource), class: "button orange" %>
                     </div>
                 <% end %>
@@ -112,6 +120,8 @@
                         <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
                         <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
                         <p><span class="title">Notes:</span> <%= resource.description.html_safe %></p>
+                        <p class="timestamp">Posted on: <%= resource.created_at.to_s(:just_date) %></p>
+                        <p class="timestamp">Last updated on: <%= resource.updated_at.to_s(:just_date) %></p>
                     </div>
                 <% end %>
             <% end %>
@@ -128,6 +138,8 @@
                         <p><span class="title">Website:</span> <%= link_to "#{resource.website_link}", resource.website_link, class: "link", target: "_blank" %></p>
                         <p><span class="title">Contact Number:</span> <%= resource.contact_num %></p>
                         <p><span class="title">Notes:</span> <%= resource.description.html_safe %></p>
+                        <p class="timestamp">Posted on: <%= resource.created_at.to_s(:just_date) %></p>
+                        <p class="timestamp">Last updated on: <%= resource.updated_at.to_s(:just_date) %></p>
                         <%= link_to "Edit Resource", edit_resource_path(resource), class: "button orange" %>
                     </div>
                 <% end %>

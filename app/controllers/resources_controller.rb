@@ -2,7 +2,7 @@ class ResourcesController < ApplicationController
   before_action :find_resource, only: [:show, :edit, :update, :destroy]
 
   def index
-    @resources = Resource.all
+    @resources = Resource.order('created_at DESC')
 
     @donation_resources = @resources.where(main_section: "Donation")
     @donation_resources_need_to_know = @donation_resources.find_all { |resource| resource[:sub_section] == "Need to Know" }
