@@ -32,8 +32,8 @@ xml.rss :version => '2.0',
           xml.element 
         end
 
-        xml.main_section resource.main_section
-        xml.sub_section resource.sub_section
+        xml.mainsection resource.main_section
+        xml.subsection resource.sub_section
         xml.pubDate resource.created_at.to_s(:rfc822)
         xml.upDate resource.updated_at.to_s(:rfc822)
       end
