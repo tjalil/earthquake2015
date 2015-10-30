@@ -19,19 +19,19 @@ xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom' do
         end
 
         if resource.contact_num.present?
-          xml.contact_number resource.contact_num
+          xml.contact "<p>" + resource.contact_num + "</p>"
         else
-          xml.contact_number ""
+          xml.contact ""
         end
 
         if resource.description.present?
-          xml.description resource.description
+          xml.description "<p>" + resource.description + "</p>"
         else
           xml.description ""
         end
 
-        xml.main_section resource.main_section
-        xml.sub_section resource.sub_section
+        xml.mainsection resource.main_section
+        xml.subsection resource.sub_section
         xml.pubDate(resource.created_at.rfc2822)
 
         xml.pubDate resource.created_at.to_s(:rfc822)
