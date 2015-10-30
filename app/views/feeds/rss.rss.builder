@@ -1,5 +1,7 @@
 xml.instruct!
-xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom', "xmlns:content" => "http://purl.org/rss/1.0/modules/content/" do
+xml.rss :version => '2.0', 
+'xmlns:atom' => 'http://www.w3.org/2005/Atom', 
+"xmlns:content" => "http://purl.org/rss/1.0/modules/content/" do
  
   xml.channel do
     xml.title 'Earthquake 2015 Resources'
@@ -19,9 +21,9 @@ xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom', "xmlns
         end
 
         if resource.contact_num.present?
-          xml.content resource.contact_num
+          xml.contact_number resource.contact_num
         else
-          xml.element 
+          xml.element "" 
         end
 
         if resource.description.present?
