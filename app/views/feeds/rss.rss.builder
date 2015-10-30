@@ -12,19 +12,19 @@ xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom' do
 
         xml.title resource.title
 
-        if resource.website_link
-          xml.website_url resource.website_link
+        if resource.website_link.present?
+          xml.link resource.website_link
         else
-          xml.website_url ""
+          xml.link "http://www.earthquake2015.info"
         end
 
-        if resource.contact_num
+        if resource.contact_num.present?
           xml.contact_number resource.contact_num
         else
           xml.contact_number ""
         end
 
-        if resource.description
+        if resource.description.present?
           xml.description resource.description
         else
           xml.description ""
