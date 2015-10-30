@@ -21,21 +21,20 @@ xml.rss :version => '2.0',
         end
 
         if resource.contact_num.present?
-          xml.contact_number resource.contact_num
+          xml.description:contactnumber resource.contact_num
         else
-          xml.element "" 
+          xml.description "" 
         end
 
         if resource.description.present?
-          xml.content resource.description
+          xml.description resource.description
         else
-          xml.element 
+          xml.description  ""
         end
 
-        xml.mainsection resource.main_section
-        xml.subsection resource.sub_section
+        xml.description:mainsection resource.main_section
+        xml.description:subsection resource.sub_section
         xml.pubDate resource.created_at.to_s(:rfc822)
-        xml.upDate resource.updated_at.to_s(:rfc822)
       end
     end
  
