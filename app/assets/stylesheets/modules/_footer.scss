@@ -1,3 +1,13 @@
 footer.global {
   @include prop(padding, 30, 0);
 }
+
+.fb-share-button {
+  @include prop(padding, 20);
+}
+
+#twitter-widget-0,
+#twitter-widget-1 {
+  position: relative !important;
+  @include prop(top, 4);
+}
