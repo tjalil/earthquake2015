@@ -8,6 +8,8 @@
         <%= javascript_include_tag 'application' %>
         <%= csrf_meta_tags %>
 
+        <link rel="alternate" type="application/rss+xml" title="Earthquake 2015 RSS Feed" href="http://www.earthquake2015.info/rss">
+
         <script src="//cdn.ckeditor.com/4.5.4/basic/ckeditor.js"></script>
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -17,13 +19,30 @@
 
           ga('create', 'UA-69412720-1', 'auto');
           ga('send', 'pageview');
-
         </script>
+
+        <!-- og tags to customize link previews -->
+        <meta property="og:url" content="http://www.earthquake2015.info" />
+        <meta property="og:title" content="Earthquake 2015 Info" />
+        <meta property="og:description" content="A crowdsourced repository of resources to assist you in helping with the recent Earthquake in Pakistan and Afghanistan." />
+    </head>
     </head>
     <body>
+
+      <!-- Load Facebook SDK for Javascript -->
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+        
         <div id="page">
             <%= render "partials/header" %>
             <%= yield %>
+            <%= render "partials/footer" %>
         </div>
 
         <%= render "partials/drawer_nav" %>
