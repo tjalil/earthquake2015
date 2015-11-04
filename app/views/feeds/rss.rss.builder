@@ -27,13 +27,13 @@ xml.rss :version => '2.0',
         end
 
         if resource.description.present?
-          xml.description "<p>" + resource.description  "</p>"
+          xml.content resource.description
         else
-          xml.description  ""
+          xml.content  ""
         end
 
-        xml.main_section resource.main_section
-        xml.sub_section resource.sub_section
+        xml.category resource.main_section
+        xml.subsection resource.sub_section
         xml.pubDate resource.created_at.to_s(:rfc822)
       end
     end
